@@ -1,20 +1,20 @@
 {
   "items": [
     {
-      "name": "Akakiy Akaki",
-      "group": "2",
-      "avg": "5.25",
+      "name": "Vsevolod Ovchinnikov",
+      "group": "32",
+      "avg": "10.05",
       "debt":  [
-        "Java",
-        "C++",
-        "Games"
+        "Bash",
+        "Rust",
+        "Mac"
       ]
     },
     {
-      "name": "Ded Asembler",
-      "group": 32,
-      "avg": 3.75,
-      "debt": "asembler"
+      "name": "Last Guardian",
+      "group": 99,
+      "avg": 99.99,
+      "debt": "all"
     }
   ],
   "_meta": {

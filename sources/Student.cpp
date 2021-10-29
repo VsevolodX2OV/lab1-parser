@@ -1,8 +1,13 @@
-// Copyright 2021 Enigma
+//Copyright 2021 by Winter Solider
 
 #include "Student.hpp"
 #include <iomanip>
 #include <utility>
+
+auto get_name(const json& j) -> std::string;
+auto get_debt(const json& j) -> std::any;
+auto get_avg(const json& j) -> std::any;
+auto get_group(const json& j) -> std::any;
 
 Student::Student(std::string _name, std::any _group,
                  std::any _avg, std::any _debt) {
@@ -38,39 +43,9 @@ bool Student::operator==(const Student& student) const
       return n && g && a && d;
 }
 
-Student::Student() = default;
 
-auto get_name(const json& j) -> std::string {
-  return j.get<std::string>();
-}
-auto get_debt(const json& j) -> std::any {
-  if (j.is_null())
-    return nullptr;
-  else if (j.is_string())
-    return j.get<std::string>();
-  else
-    return j.get<std::vector<std::string>>();
-}
 
-auto get_avg(const json& j) -> std::any {
-  if (j.is_null())
-    return nullptr;
-  else if (j.is_string())
-    return j.get<std::string>();
-  else if (j.is_number_float())
-    return j.get<double>();
-  else
-    return j.get<std::size_t>();
-}
-
-auto get_group(const json& j) -> std::any {
-  if (j.is_string())
-    return j.get<std::string>();
-  else
-    return j.get<std::size_t>();
-}
-
-void from_json(const json& j, Student& s) {
+void parse_JSON(const json& j, Student& s) {
   s.name = get_name(j.at("name"));
   s.group = get_group(j.at("group"));
   s.avg = get_avg(j.at("avg"));

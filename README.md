@@ -94,7 +94,7 @@ struct Student {
 
 using nlohmann::json;
 
-void from_json(const json& j, student_t& s) {
+void parse_JSON(const json& j, student_t& s) {
 
     s.name = get_name(j.at("name"));
     s.group = get_group(j.at("group"));

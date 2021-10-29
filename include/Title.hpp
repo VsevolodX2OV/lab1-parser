@@ -1,4 +1,5 @@
-//Copyright 2021 Enigma
+//Copyright 2021 by Winter Solider
+
 
 #ifndef INCLUDE_HEADER_HPP_
 #define INCLUDE_HEADER_HPP_
@@ -12,6 +13,6 @@
 
 using nlohmann::json;
 
-json takeJson(int argc, char** argv);
+json inputJson(int argc, char** argv);
 
 #endif // INCLUDE_HEADER_HPP_

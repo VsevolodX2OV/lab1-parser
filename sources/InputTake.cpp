@@ -1,7 +1,22 @@
-//Copyright 2021 Enigma
-#include <header.hpp>
+//Copyright 2021 by Winter Solider
+#include <Title.hpp>
+
 #include "Student.hpp"
-json takeJson(int argc, char** argv) {
+
+std::vector<Student> pasrJson(json& data)
+{
+  std::vector<Student> students;
+  for (auto const& item : data.at("items"))
+  {
+    Student student1;
+    parse_JSON(item, student1);
+    students.push_back(student1);
+  }
+  return students;
+}
+
+
+json inputJson(int argc, char** argv) {
   if (argc < 2) throw std::runtime_error{"The file path was not passed"};
   std::string filePath(argv[1]);
   std::ifstream jsonFile(filePath);
@@ -14,15 +29,4 @@ json takeJson(int argc, char** argv) {
   if (data.at("items").size() != data.at("_meta").at("count").get<size_t>())
     throw std::runtime_error{"_meta value does not match the array size"};
   return data;
-}
-std::vector<Student> parsingJson(json& data)
-{
-  std::vector<Student> students;
-  for (auto const& item : data.at("items"))
-  {
-    Student student1;
-    from_json(item, student1);
-    students.push_back(student1);
-  }
-  return students;
 }
