@@ -15,4 +15,4 @@ using nlohmann::json;
 
 json inputJson(int argc, char** argv);
 
-#endif // INCLUDE_HEADER_HPP_
+#endif // INCLUDE_TITLE_HPP_
