@@ -16,6 +16,7 @@ Student::Student(std::string _name, std::any _group,
   avg = std::move(_avg);
   debt = std::move(_debt);
 }
+
 bool anyDate(std::any a1, std::any a2)
 {
   if (a1.type() != a2.type())
