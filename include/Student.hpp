@@ -25,8 +25,7 @@ struct Student {
 void print(Student& student, std::ostream& os);
 
 
-void print(std::string s1, std::string s2,
-           std::string s3, std::string s4, std::ostream& os);
+void print(std::string s1, std::string s2, std::string s3, std::string s4, std::ostream& os);
 
 
 void print(std::vector<Student>& students, std::ostream& os);

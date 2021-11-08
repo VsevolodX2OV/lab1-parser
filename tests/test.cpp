@@ -3,9 +3,7 @@
 #ifdef TEST_CPP_
 
 #include <gtest/gtest.h>
-
 #include <Student.hpp>
-
 #include "Title.hpp"
 
 #ifndef _JSON_DIR

@@ -1,6 +1,6 @@
 //Copyright 2021 by Winter Solider
-#include <Title.hpp>
 
+#include <Title.hpp>
 #include "Student.hpp"
 
 std::vector<Student> pasrJson(json& data)
@@ -15,7 +15,6 @@ std::vector<Student> pasrJson(json& data)
   return students;
 }
 
-
 json inputJson(int argc, char** argv) {
   if (argc < 2) throw std::runtime_error{"The file path was not passed"};
   std::string filePath(argv[1]);
@@ -25,7 +24,6 @@ json inputJson(int argc, char** argv) {
   jsonFile >> data;
   if (!data.at("items").is_array())
     throw std::runtime_error{"the array must be contained in the file"};
-
   if (data.at("items").size() != data.at("_meta").at("count").get<size_t>())
     throw std::runtime_error{"_meta value does not match the array size"};
   return data;

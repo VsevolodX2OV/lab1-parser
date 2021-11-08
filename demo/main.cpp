@@ -8,4 +8,3 @@ int main(int argc, char** argv)
   std::vector<Student> students = pasrJson(data);
   print(students, std::cout);
 }
-

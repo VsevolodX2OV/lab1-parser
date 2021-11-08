@@ -46,10 +46,8 @@ void print(std::string s1, std::string s2,
 
 void print(Student& student, std::ostream& os)
 {
-  print(student.name, toString(student.group), toString(student.avg),
-        toString(student.debt), os);
+  print(student.name, toString(student.group), toString(student.avg),toString(student.debt), os);
 }
-
 
 void print(std::vector<Student>& students, std::ostream& os)
 {

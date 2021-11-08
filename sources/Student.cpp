@@ -9,8 +9,7 @@ auto get_debt(const json& j) -> std::any;
 auto get_avg(const json& j) -> std::any;
 auto get_group(const json& j) -> std::any;
 
-Student::Student(std::string _name, std::any _group,
-                 std::any _avg, std::any _debt) {
+Student::Student(std::string _name, std::any _group, std::any _avg, std::any _debt) {
   name = std::move(_name);
   group = std::move(_group);
   avg = std::move(_avg);
@@ -35,6 +34,7 @@ bool anyDate(std::any a1, std::any a2)
            == std::any_cast<std::vector<std::string>>(a2);
   return false;
 }
+
 bool Student::operator==(const Student& student) const
 {
       bool n =  name == student.name;
@@ -43,8 +43,6 @@ bool Student::operator==(const Student& student) const
       bool d = anyDate(debt, student.debt);
       return n && g && a && d;
 }
-
-
 
 void parse_JSON(const json& j, Student& s) {
   s.name = get_name(j.at("name"));
