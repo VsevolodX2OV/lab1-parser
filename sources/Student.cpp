@@ -9,7 +9,8 @@ auto get_debt(const json& j) -> std::any;
 auto get_avg(const json& j) -> std::any;
 auto get_group(const json& j) -> std::any;
 
-Student::Student(std::string _name, std::any _group, std::any _avg, std::any _debt) {
+Student::Student(std::string _name, std::any _group,
+                 std::any _avg, std::any _debt) {
   name = std::move(_name);
   group = std::move(_group);
   avg = std::move(_avg);
